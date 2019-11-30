@@ -38,7 +38,7 @@ public class VehicleService {
 		System.out.println(vehicleList.toString());
 	}
 
-	public void updateUser(int id, List<Vehicle> vehicleList) {
+	public void updateVehicle(int id, List<Vehicle> vehicleList) {
 		if (id >= vehicleList.size()) {
 			System.out.println("ID does not exist.");
 		} else {

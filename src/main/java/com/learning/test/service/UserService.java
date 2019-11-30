@@ -79,7 +79,12 @@ public class UserService {
 			System.out.println("Weight can't be negative.");
 			error = true;
 		}
-
+		for (User user2 : userList) {
+			if(user.getId() == user2.getId()) {
+				System.out.println("ID already exists.");
+				error=true;
+			}
+		}
 		if (error)
 			System.exit(0);
 
