@@ -11,7 +11,6 @@ public class Vehicle {
 	private String createdAt;
 	
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "id=" + id + ", Vehicle name=" + vehicleName + ", Vehicle Type=" + vehicleType + ", Vehicle Cost=" + vehicleCost
 				+ ", created by=" + createdBy + ", created at=" + createdAt;
 		// return super.toString();

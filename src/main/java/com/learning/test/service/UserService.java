@@ -59,7 +59,6 @@ public class UserService {
 	}
 
 	private void validateInput(User user, List<User> userList) {
-		// TODO Auto-generated method stub
 		// create flow -> check Id already exist -> error
 		// create -> create method ID check if exist
 		// update flow -> already exist -> not exist error

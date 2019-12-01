@@ -6,7 +6,6 @@ public class User {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "id=" + id + ", name=" + name + ", age=" + age + ", weight=" + weight + ", gender=" + gender
 				+ ", created by=" + createdBy + ", created at=" + createdAt;
 		// return super.toString();
