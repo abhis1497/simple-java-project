@@ -1,14 +1,14 @@
-package com.learning.test.service;
+package com.learning.service;
 
+import com.learning.model.Vehicle;
+
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import com.learning.test.model.Vehicle;
-
-import java.util.Date;
-
-public class VehicleService {
+public class VehicleService extends GenericCrudService<Vehicle> {
     public void createVehicle(Vehicle vehicle, List<Vehicle> vehicleList) {
+        @SuppressWarnings("resource")
         Scanner scan = new Scanner(System.in);
         System.out.println("ID:");
         vehicle.setId(scan.nextInt());

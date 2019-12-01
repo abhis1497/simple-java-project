@@ -1,4 +1,4 @@
-package test.com.learning.test;
+package test.com.learning;
 
 /**
  * Unit test for simple App.
