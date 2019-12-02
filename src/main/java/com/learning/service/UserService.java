@@ -1,12 +1,15 @@
 package com.learning.service;
 
 import com.learning.model.User;
+import com.learning.repository.GenericCrudRepository;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-public class UserService extends GenericCrudService<User> {
+public class UserService {
+
+    GenericCrudRepository<User> userDao = new GenericCrudRepository<>();
 
     public void createUser(User user, List<User> userList) {
         @SuppressWarnings("resource")
@@ -24,7 +27,8 @@ public class UserService extends GenericCrudService<User> {
         user.setCreatedAt(new Date());
         user.setCreatedBy("SYSTEM");
         validateInput(user, userList);
-        userList.add(user);
+//        userList.add(user);
+        userDao.create(user, userList);
     }
     // update user method
     // create method improve update read delete

@@ -1,9 +1,9 @@
 package com.learning;
 
+import com.learning.model.User;
 import com.learning.model.Vehicle;
 import com.learning.service.UserService;
 import com.learning.service.VehicleService;
-import com.learning.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,15 +11,19 @@ import java.util.Scanner;
 
 /**
  * Hello world!
- * call kar ab kar k
+ * call kar ab kar khellooooooooooo
  */
 public class App {
     static Scanner scan = new Scanner(System.in);
     static List<User> userList = new ArrayList<>();
     static List<Vehicle> vehicleList = new ArrayList<>();
 
-    public static void crudUser() {
-        UserService userService = new UserService();
+    private VehicleService vehicleService = new VehicleService();
+    private UserService userService = new UserService();
+    static App app = new App();
+
+    public void crudUser() {
+
         System.out.println("1.Create User\n2.Display User\n3.Update User\n4.Delete User\n5.Dislplay all users");
         int ch = scan.nextInt();
         switch (ch) {
@@ -46,9 +50,9 @@ public class App {
 
     }
 
-    public static void crudVehicle() {
+    public void crudVehicle() {
 
-        VehicleService vehicleService = new VehicleService();
+
         System.out.println("1.Create Vehicle\n2.Display Vehicle\n3.Update Vehicle\n4.Delete Vehicle\n5.Dislplay all Vehicles");
         int ch = scan.nextInt();
         switch (ch) {
@@ -80,10 +84,10 @@ public class App {
             int ch = scan.nextInt();
             switch (ch) {
                 case 1:
-                    crudUser();
+                    app.crudUser();
                     break;
                 case 2:
-                    crudVehicle();
+                    app.crudVehicle();
                     break;
                 case 3:
                     System.exit(0);

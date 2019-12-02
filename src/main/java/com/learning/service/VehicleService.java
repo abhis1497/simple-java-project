@@ -1,12 +1,16 @@
 package com.learning.service;
 
 import com.learning.model.Vehicle;
+import com.learning.repository.GenericCrudRepository;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-public class VehicleService extends GenericCrudService<Vehicle> {
+public class VehicleService extends GenericCrudRepository<Vehicle> {
+
+    GenericCrudRepository<Vehicle> vehicleDao = new GenericCrudRepository<>();
+
     public void createVehicle(Vehicle vehicle, List<Vehicle> vehicleList) {
         @SuppressWarnings("resource")
         Scanner scan = new Scanner(System.in);
@@ -20,17 +24,13 @@ public class VehicleService extends GenericCrudService<Vehicle> {
         vehicle.setVehicleCost(scan.nextInt());
         vehicle.setCreatedAt(new Date());
         vehicle.setCreatedBy("system");
-        vehicleList.add(vehicle);
+        vehicleDao.create(vehicle, vehicleList);
     }
     // update user method
     // create method improve update read delete
 
     public void display(int id, List<Vehicle> vehicleList) {
-        if (vehicleList.isEmpty()) {
-            System.out.println("Empty userList");
-        } else {
-            System.out.println(vehicleList.get(id).toString());
-        }
+        vehicleDao.display(id, vehicleList);
     }
 
     public void displayAll(List<Vehicle> vehicleList) {
@@ -38,13 +38,7 @@ public class VehicleService extends GenericCrudService<Vehicle> {
     }
 
     public void updateVehicle(int id, List<Vehicle> vehicleList) {
-        if (id >= vehicleList.size()) {
-            System.out.println("ID does not exist.");
-        } else {
-            deleteVehicle(id, vehicleList);
-            createVehicle(new Vehicle(), vehicleList);
-
-        }
+//       vehicleDao.update(id, vehicleList);
     }
 
     public void deleteVehicle(int id, List<Vehicle> vehicleList) {
