@@ -2,6 +2,7 @@ package com.learning.service;
 
 import com.learning.model.User;
 import com.learning.repository.GenericCrudRepository;
+import com.learning.repository.GenericCrudRepositoryImpl;
 
 import java.util.Date;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Scanner;
 
 public class UserServiceImpl implements UserService {
 
-    GenericCrudRepository<User> userDao = new GenericCrudRepository<>();
+    GenericCrudRepository<User> userDao = new GenericCrudRepositoryImpl<>();
 
     @Override
     public void createUser(User user, List<User> userList) {

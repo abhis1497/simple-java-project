@@ -3,7 +3,9 @@ package com.learning;
 import com.learning.model.User;
 import com.learning.model.Vehicle;
 import com.learning.service.UserService;
+import com.learning.service.UserServiceImpl;
 import com.learning.service.VehicleService;
+import com.learning.service.VehicleServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +20,8 @@ public class App {
     static List<User> userList = new ArrayList<>();
     static List<Vehicle> vehicleList = new ArrayList<>();
 
-    private VehicleService vehicleService = new VehicleService();
-    private UserService userService = new UserService();
+    private VehicleService vehicleService = new VehicleServiceImpl();
+    private UserService userService = new UserServiceImpl();
     static App app = new App();
 
     public void crudUser() {
